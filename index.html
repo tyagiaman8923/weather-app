@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>weather app</title>
+</head>
+<body>
+    <div id="wraper" class="text-white flex flex-col gap-8  items-center relative bg-gradient-to-r from-regal-blue to-blue-300 min-w-[100vw] min-h-[100vh] ">
+      <!-- <div class="text-white flex flex-col gap-8  items-center relative bg-gradient-to-r from-regal-blue to-blue-300 min-w-[100vw] min-h-[100vh]"></div>  -->
+        <!---permanent portion-->
+        <div class="text-white flex flex-col gap-8  items-center  min-w-[100vw] h-[840px] sm:h-[573] md:h-[100vh]">
+            <div id="heading" class="font-bold text-3xl pt-5"><h1>WEATHER APP</h1></div>
+            <div id="tabs" class="flex gap-1 sm:gap-64 ">
+                <div id="yLoc" class=" flex items-center justify-center rounded w-32 h-6 cursor-pointer bg-[#2C5282]">Your Weather</div>
+                <div id="sLoc" class=" flex items-center justify-center rounded w-32 h-6 cursor-pointer bg-[#2C5282]">Search Weather</div>
+            </div>
+        </div>
+
+        <!---first portion allow location -->
+        <div id="first" class=" w-[100vw] absolute flex flex-col gap-4 items-center justify-center top-80 z-10">
+            <img class="h-28 w-28" src="./images/location.png"  alt="">
+            <div class="font-bold text-2xl sm:text-3xl">Grant Location Access</div>
+            <div class=" text-sm sm:text-neutral-50">Allow Access To Get Weather Information </div>
+            <div id="button1" class="w-32 h-10 bg-[#2C5282] rounded-md flex items-center justify-center cursor-pointer ">GRANT ACCESS</div>
+
+        </div>
+        <!--second portion  search bar-->
+        <form id="second" class="absolute flex gap-1 top-44 ">
+            <input id="searchName" placeholder=" Enter Location" type="text" class=" placeholder:text-white  font-bold text-lg w-60 sm:w-[480px] h-7 rounded-md bg-white bg-opacity-40 border pl-3">
+              <button id="button2" type="submit" class="h-7 w-7 rounded-full bg-white bg-opacity-30 flex items-center justify-center cursor-pointer"> <img src="./images/search.png" class="h-5"></button>
+        </form>
+
+        <!--loading portion -->
+        <div id="load" class=" absolute flex flex-col gap-4  w-[100vw] items-center justify-center top-64 ">
+            <img src="./images/loading.gif" class="h-40 w-40">
+            <div class="font-bold text-xl ">Loading...</div>
+        </div>
+
+        <!--main portion -->
+        <div id="main" class="absolute flex flex-col gap-2 items-center top-64 z-0">
+            <div class="flex gap-2 justify-center items-center ">
+                <div id="cityName" class="text-3xl font-bold"></div>
+                <img class="h-6" data-countryIcon>
+            </div>
+            <div id="atm" class="font-bold text-xl"></div>
+            <img id="data-weatherIcon" src="" class="h-8">
+            <div class="flex gap-1">
+                <div id="temp" class="font-bold text-3xl"></div>
+                
+            </div>
+            <div id="threeBoxes" class="sm:flex  gap-2 ">
+                <div id="firstBox" class="h-32 sm:h-36 w-64 sm:w-44 bg-white rounded-md bg-opacity-40 mt-2 flex flex-col items-center justify-center">
+                    <img src="./images/wind.png" class="w-14 h-10">
+                    <div class="font-bold text-lg">WINDSPEED</div>
+                    <div class="flex  font-bold">
+                        <div id="valueWind"></div>
+                        
+                    </div>
+                </div>
+                <div id="secondBox" class="h-32 sm:h-36 w-64 sm:w-44 mt-2 bg-white rounded-md bg-opacity-40 flex flex-col items-center justify-center">
+                    <img src="./images/humidity.png" class="w-14 h-10">
+                    <div class="font-bold text-lg">HUMIDITY</div>
+                    <div class="flex gap-1 font-bold">
+                        <div id="valueHumi"></div>
+                        
+                    </div>
+                </div>
+                <div id="thirdBox" class="h-32 sm:h-36 w-64 sm:w-44 mt-2 bg-white rounded-md bg-opacity-40 flex flex-col items-center justify-center">
+                    <img src="./images/cloud.png" class="w-14 h-10">
+                    <div class="font-bold text-lg">CLOUDES</div>
+                    <div class="flex gap-1 font-bold">
+                        <div id="valueCloud"></div>
+                        
+                    </div></div>
+
+            </div>
+        </div>
+        <!-- not found section-->
+        <div id="notFound" class=" flex flex-col items-center absolute top-64 z-0">
+            <img src="./images/not-found.png" class="h-44">
+            <div class="text-3xl font-bold">CITY NOT FOUND</div>
+        </div>
+    </div>
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
